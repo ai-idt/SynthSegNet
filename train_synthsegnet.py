@@ -32,7 +32,7 @@ Target_Image: Path to the target image (to be synthesized)
 
 The following is an example configuration, where we load flair and t2 as input, seg as mask and t1 as target (i.e., our MS use case)
 """
-train_samples_flair = glob("/mnt/Drive4/bene/msseg/**/*_flair.nii.gz",recursive=True)
+train_samples_flair = glob("/mnt/Drive4/msseg/**/*_flair.nii.gz",recursive=True)
 train_samples = [{"Input_Images": [item, item.replace("_flair.nii.gz","_t2.nii.gz")]} for item in train_samples_flair]
 for _ in range(len(train_samples)):
 	train_samples[_]["Mask"] = train_samples[_]["Input_Images"][0].replace("_flair.nii.gz","_seg.nii.gz") if os.path.exists(train_samples[_]["Input_Images"][0].replace("_flair.nii.gz","_seg.nii.gz")) else None
