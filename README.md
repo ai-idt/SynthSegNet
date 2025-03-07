@@ -3,7 +3,9 @@
 This is the code repository accompanying our paper **"SynthSegNet: Jointly Learning Image Segmentation and Synthesis Improves Lesion Detection and Unlocks the Value of Unlabelled Data"**
 
 ![Overview of our architecture](overview.png)
-We propose an innovative dual-headed 3D U-Net architecture featuring two output heads: one for lesion segmentation and another for synthetic MRI sequence generation. By sharing weights and employing a coupled loss function, the model leverages supervision from both labeled and unlabeled images through the auxiliary image synthesis task.
+Precisely identifying and segmenting lesions represents a critical challenge in medical image analysis. While supervised learning remains the gold standard, it relies heavily on manually labeled data, which is labor-intensive and often limited in availability.
+
+To allow to use also unlabelled data for training a segmentation model, we propose an innovative dual-headed 3D U-Net architecture featuring two output heads: one for lesion segmentation and another for synthetic MRI sequence generation. By sharing weights and employing a coupled loss function, the model leverages supervision from both labeled and unlabeled images through the auxiliary image synthesis task.
 
 ## Usage
 In order to run our code (```train_synthsegnet.py```), it is essential that you adapt the data dictionary used to load data. A detailed example is also found in ```train_synthsegnet.py```. In essence:
